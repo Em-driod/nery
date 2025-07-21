@@ -1,16 +1,18 @@
 import { useState } from "react";
-import useAuthStore from "../store/authStore";
 import { Link } from "react-router-dom";
 import { FiMail, FiLock } from "react-icons/fi"; // Import icons
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const login = useAuthStore((state) => state.login);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await login(email, password);
+    // In a real application, you would handle login logic here,
+    // e.g., send a request to your backend API for authentication.
+    // For this example, we're just simulating the submission.
+    console.log("Login attempt with:", { email, password });
+    // You might want to add a loading state and error handling here.
   };
 
   return (
@@ -48,7 +50,7 @@ const Login = () => {
             className="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-md transition"
           >
             <Link to="/Product">
-            LOGIN
+              LOGIN
             </Link>
           </button>
         </form>
@@ -66,4 +68,3 @@ const Login = () => {
 };
 
 export default Login;
-

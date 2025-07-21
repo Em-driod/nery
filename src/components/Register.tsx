@@ -1,5 +1,4 @@
 import { useState } from "react";
-import useAuthStore from "../store/authStore";
 import { Link } from "react-router-dom";
 import { FiMail, FiLock } from "react-icons/fi"; // Import icons
 
@@ -7,11 +6,14 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const register = useAuthStore((state) => state.register);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await register(name, email, password);
+    // In a real application, you would handle registration logic here,
+    // e.g., send a request to your backend API to create a new user.
+    // For this example, we're just simulating the submission.
+    console.log("Register attempt with:", { name, email, password });
+    // You might want to add a loading state, success/error messages, and redirection here.
   };
 
   return (
@@ -27,6 +29,7 @@ const Register = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-3 bg-gray-900 text-white rounded-md border border-gray-700 focus:border-green-500 focus:ring focus:ring-green-500/40 outline-none transition"
+              required
             />
           </div>
 
@@ -39,6 +42,7 @@ const Register = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 pl-12 bg-gray-900 text-white rounded-md border border-gray-700 focus:border-green-500 focus:ring focus:ring-green-500/40 outline-none transition"
+              required
             />
           </div>
 
@@ -51,6 +55,7 @@ const Register = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 pl-12 bg-gray-900 text-white rounded-md border border-gray-700 focus:border-green-500 focus:ring focus:ring-green-500/40 outline-none transition"
+              required
             />
           </div>
 

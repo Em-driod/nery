@@ -22,15 +22,17 @@ const Navbar = () => {
       <div className="space-x-6 text-sm font-semibold flex">
         <Link to="/Product" className="text-white no-underline">SHOP</Link>
 
-      <Link to="/Product" className="text-white no-underline">SALE</Link>
-        <p className="text-white hover:underline-none">HELP</p>
+        <Link to="/Product" className="text-white no-underline">SALE</Link>
+        {/* Changed p tag to Link for better navigation consistency and accessibility */}
+        <Link to="/Help" className="text-white no-underline">HELP</Link> 
       </div>
 
       {/* User Auth & Cart */}
       <div className="flex justify-center gap-4 items-center">
         {user ? (
           <>
-            <span className="text-white">Welcome, {user.name}</span>
+            {/* Displaying user's email if available, otherwise "User" */}
+            <span className="text-white">Welcome, {user.email || "User"}</span> 
             <button onClick={logout} className="flex items-center gap-2 text-sm px-3 text-white">
               Logout
             </button>
@@ -46,7 +48,7 @@ const Navbar = () => {
         <Link to="/Cart" className="relative">
           <CiShoppingCart size={34} color="white" />
           {totalItems > 0 && (
-            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
               {totalItems}
             </span>
           )}
@@ -57,9 +59,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
