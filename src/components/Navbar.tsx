@@ -21,7 +21,8 @@ const Navbar = () => {
       {/* Navigation Links */}
       <div className="space-x-6 text-sm font-semibold flex">
         <Link to="/Product" className="text-white no-underline">SHOP</Link>
-        <p className="text-white hover:underline-none">SALE</p>
+
+      <Link to="/Product" className="text-white no-underline">SALE</Link>
         <p className="text-white hover:underline-none">HELP</p>
       </div>
 
