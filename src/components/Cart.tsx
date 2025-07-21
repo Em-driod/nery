@@ -379,7 +379,7 @@ const Cart = () => {
           {/* --- Continue Button --- */}
           <button
             onClick={handleProceedToCheckout}
-            className={`mt-10 w-full ${theme.primaryBg} ${theme.primaryHoverBg} ${theme.buttonText} text-2xl font-bold py-5 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-103 focus:outline-none focus:ring-4 focus:ring-lime-500 focus:ring-opacity-50`}
+            className={`mt-10 w-full text-2xl  bg-amber-50 font-bold py-5 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-103 focus:outline-none focus:ring-4 focus:ring-lime-500 focus:ring-opacity-50`}
           >
             {currentStep < 3 ? "Proceed to Checkout" : "Confirm Payment"}
           </button>
